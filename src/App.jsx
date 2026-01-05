@@ -1,9 +1,21 @@
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Body from "./Body";
+import Login from "./Login";
+import Profile from "./Profile";
 
 const App = () => {
   return (
-    <div className="bg-amber-800 pt-7">App</div>
-  )
-}
+    <>
+      <BrowserRouter basename="/">
+        <Routes>
+          <Route path="/" element={<Body></Body>}>
+          <Route path="/login" element={<Login></Login>}></Route>
+          <Route path="/profile" element={<Profile></Profile>}></Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
+};
 
-export default App
+export default App;
