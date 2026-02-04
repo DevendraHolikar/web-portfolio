@@ -3,38 +3,58 @@ import useReadData from "../hooks/useReadData";
 import { useState, useEffect } from "react";
 
 const All = () => {
-  const [fillterData, setFillterData] = useState(null);
+  const getData = useReadData() || [];
+  const [fillterData, setFillterData] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-  const [dropDownValue, setdropDownValue] = useState("");
-
-  const getdata = useReadData();
+  const [dropDownValue, setdropDownValue] = useState("All");
 
   useEffect(() => {
-    setFillterData(getdata);
-  }, [getdata]);
+    if (getData.length > 0) {
+      setFillterData(getData);
+    }
+  }, [getData]);
 
   const handleSearch = () => {
-    const dataFillter = getdata.filter((name) =>
-      name.Website_Name_DB.toLowerCase().includes(searchValue.toLowerCase())
+    const dataFillter = getData.filter((name) =>
+      name.Website_Name_DB.toLowerCase().includes(searchValue.toLowerCase()),
     );
     setFillterData(dataFillter);
   };
 
+  const groupedPlatforms = Object.values(
+    getData.reduce((acc, item) => {
+      const platform = item.Platform_Name_DB;
+
+      if (!acc[platform]) {
+        acc[platform] = {
+          platformName: platform,
+          count: 0,
+        };
+      }
+      acc[platform].count += 1;
+
+      return acc;
+    }, {}),
+  );
+
+  // console.log(groupedPlatforms)
+
   const handleDropdown = (e) => {
     setdropDownValue(e.target.value);
+    setSearchValue("");
     if (e.target.value === "All") {
-      setFillterData(getdata);
+      setFillterData(getData);
     } else {
-      const dataFillter = getdata.filter((name) =>
+      const dataFillter = getData.filter((name) =>
         name.Platform_Name_DB.toLowerCase().includes(
-          e.target.value.toLowerCase()
-        )
+          e.target.value.toLowerCase(),
+        ),
       );
       setFillterData(dataFillter);
     }
   };
 
-  if (fillterData === null) {
+  if (getData.length === 0) {
     return <h1 className="text-center text-bold pt-5">Loading...</h1>;
   }
 
@@ -49,18 +69,16 @@ const All = () => {
               <select
                 value={dropDownValue}
                 onChange={handleDropdown}
-                
                 className="select"
               >
                 <option disabled={true}>Select Platform</option>
-                <option >All</option>
-                <option >Wordpress</option>
-                <option >React</option>
-                <option >AEM</option>
-                <option >Html5</option>
+                <option>All</option>
+                {groupedPlatforms.map((item) => {
+                  return (
+                    <option key={item.platformName}>{item.platformName}</option>
+                  );
+                })}
               </select>
-
-              
             </div>
 
             <input

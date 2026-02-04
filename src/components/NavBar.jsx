@@ -42,15 +42,17 @@ const NavBar = () => {
             tabIndex="-1"
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            
-          <li>
-            <Link to={"/all"}>All</Link>
+             <li>
+            <Link to={"/"}>Home</Link>
           </li>
           <li>
-            <Link to={"/add"}>Add</Link>
+            <Link to={"/all"}>All projects</Link>
           </li>
           <li>
-            <Link to={"/update"}>Update</Link>
+            <Link to={"/add"}>Add projects</Link>
+          </li>
+          <li>
+            <Link to={"/update"}>Update projects</Link>
           </li>
           </ul>
         </div>
@@ -61,13 +63,16 @@ const NavBar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link to={"/all"}>All</Link>
+            <Link to={"/"}>Home</Link>
           </li>
           <li>
-            <Link to={"/add"}>Add</Link>
+            <Link to={"/all"}>All projects</Link>
           </li>
           <li>
-            <Link to={"/update"}>Update</Link>
+            <Link to={"/add"}>Add projects</Link>
+          </li>
+          <li>
+            <Link to={"/update"}>Update projects</Link>
           </li>
         </ul>
       </div>

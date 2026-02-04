@@ -30,7 +30,7 @@ const TableAllData = (props) => {
               </a>{" "}
             </td>
             <td className="">{Platform_Name_DB}</td>
-            <td className="">{Show_hide_DB}</td>
+            <td className="">{ Show_hide_DB }</td>
             <td className="">{Selected_Work_DB}</td>
           </tr>
         
