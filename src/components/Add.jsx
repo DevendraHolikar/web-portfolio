@@ -9,8 +9,8 @@ const Add = () => {
   const [companyName, setCompanyName] = useState("");
   const [companyURL, setCompanyURL] = useState("");
   const [platformName, setPlatformName] = useState("");
-  const [showhide, setShowhide] = useState("");
-  const [selectedWork, setSelectedWork] = useState("");
+  const [showHide, setShowhide] = useState("show");
+  const [selectedWork, setSelectedWork] = useState("False");
   const [errors, setErrors] = useState({});
 
   const validateForm = () => {
@@ -40,10 +40,14 @@ const Add = () => {
       Company_Name_DB: companyName,
       Company_URL_DB: companyURL,
       Platform_Name_DB: platformName,
-      Show_hide_DB: showhide,
+      Show_hide_DB: showHide,
       Selected_Work_DB: selectedWork,
     });
+
+    console.log( websiteName,websiteCategory,visitURL,companyName,companyURL,platformName ,showHide,selectedWork)
   };
+
+    console.log(showHide,selectedWork)
 
   const handleSubmitProject = () => {
     if (!validateForm()) return;
@@ -59,9 +63,10 @@ const Add = () => {
     setPlatformName("");
   };
 
+
   return (
     <div className="w-full grid place-items-center  mt-auto">
-      <div className="card bg-base-300 w-[90%] md:w-[50%] shadow-sm ">
+      <div className="card bg-base-200 w-[90%] md:w-[50%] shadow-sm ">
         <div className="card-body">
           <h2 className="card-title">Add a new project</h2>
           <fieldset className="fieldset">
@@ -170,14 +175,13 @@ const Add = () => {
                 <legend className="fieldset-legend">Show / Hide</legend>
 
                 <select
-                  value={showhide}
+                  value={showHide}
                   onChange={(e) => setShowhide(e.target.value)}
                   
-                  className="select w-full"
+                  className="select w-full capitalize"
                 >
-                  <option disabled={true}>Show or hidden</option>
-                  <option value="Show">Show</option>
-                  <option value="Hidden">Hidden</option>
+                  <option>show</option>
+                  <option>hidden</option>
                 </select>
               </div>
 
@@ -190,14 +194,13 @@ const Add = () => {
                   
                   className="select w-full"
                 >
-                  <option disabled={true}>True or False</option>
-                  <option value="True">True</option>
-                  <option value="False">False</option>
+                  <option>True</option>
+                  <option>False</option>
                 </select>
               </div>
             </div>
 
-            <button onClick={handleSubmitProject} className="btn w-full mt-4">
+            <button onClick={handleSubmitProject} className="btn w-full mt-4 btn-neutral">
               Submit
             </button>
           </fieldset>

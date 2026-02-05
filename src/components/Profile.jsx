@@ -4,7 +4,7 @@ const Profile = () => {
   const getPlatform = useGetPlatform();
 
   return !getPlatform || getPlatform.length === 0 ? (
-    <h1>Loading...</h1>
+    <h1 className="text-center text-bold pt-5">Loading...</h1>
   ) : (
     <div className="flex flex-col md:flex-row gap-4 justify-center p-4 m-auto flex-wrap">
       {getPlatform.map((item) => (

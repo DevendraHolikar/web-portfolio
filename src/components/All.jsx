@@ -15,10 +15,17 @@ const All = () => {
   }, [getData]);
 
   const handleSearch = () => {
+    if (!searchValue.trim().toLowerCase()) {
+      setFillterData(getData);
+      setdropDownValue("All");
+    }
+
     const dataFillter = getData.filter((name) =>
       name.Website_Name_DB.toLowerCase().includes(searchValue.toLowerCase()),
     );
     setFillterData(dataFillter);
+      setdropDownValue("All");
+
   };
 
   const groupedPlatforms = Object.values(
@@ -54,17 +61,18 @@ const All = () => {
     }
   };
 
+  if (!getData) {
+    return <h1 className="text-center text-bold pt-5">No data found...</h1>;
+  }
   if (getData.length === 0) {
     return <h1 className="text-center text-bold pt-5">Loading...</h1>;
   }
 
   return (
     <div>
-      {fillterData.length === 0 ? (
-        <p className="text-center text-bold">No messages found</p>
-      ) : (
+      {
         <div>
-          <div className="flex gap-4 justify-center md:justify-end py-4">
+          <div className="flex gap-4 justify-center md:justify-end py-4 px-2">
             <div>
               <select
                 value={dropDownValue}
@@ -93,41 +101,45 @@ const All = () => {
             </button>
           </div>
 
-          <div className="overflow-x-auto px-2 capitalize pb-4">
-            <table className="table table-zebra">
-              <thead>
-                <tr className="bg-base-300">
-                  <th className="w-[auto]">Sr No</th>
-                  <th className="w-[auto]">Website Name</th>
-                  <th className="w-[auto]">Website Category</th>
-                  <th className="w-[auto]">Visit URL</th>
-                  <th className="w-[auto]">Company URL</th>
-                  <th className="w-[auto]">Platform Name</th>
-                  <th className="w-[auto]">Show / Hide</th>
-                  <th className="w-[auto]">Selected Work</th>
-                </tr>
-              </thead>
-              <tbody>
-                {fillterData.map((item, index) => (
-                  <TableAllData
-                    key={item.id}
-                    index={index + 1}
-                    Company_Name_DB={item.Company_Name_DB}
-                    Company_URL_DB={item.Company_URL_DB}
-                    Platform_Name_DB={item.Platform_Name_DB}
-                    Selected_Work_DB={item.Selected_Work_DB}
-                    Show_hide_DB={item.Show_hide_DB}
-                    Up_img_url_DB={item.Up_img_url_DB}
-                    Visit_URL_DB={item.Visit_URL_DB}
-                    Website_Category_DB={item.Website_Category_DB}
-                    Website_Name_DB={item.Website_Name_DB}
-                  ></TableAllData>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          {fillterData.length === 0 ? (
+            <p className="text-center text-bold">No result found...</p>
+          ) : (
+            <div className="overflow-x-auto px-2 capitalize pb-4">
+              <table className="table table-zebra">
+                <thead>
+                  <tr className="bg-base-300">
+                    <th className="w-[auto] py-3 px-3">Sr No</th>
+                    <th className="w-[auto] py-3 px-3">Website Name</th>
+                    <th className="w-[auto] py-3 px-3">Website Category</th>
+                    <th className="w-[auto] py-3 px-3">Visit URL</th>
+                    <th className="w-[auto] py-3 px-3">Company URL</th>
+                    <th className="w-[auto] py-3 px-3">Platform Name</th>
+                    <th className="w-[auto] py-3 px-3">Show / Hide</th>
+                    <th className="w-[auto] py-3 px-3">Selected Work</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {fillterData.map((item, index) => (
+                    <TableAllData
+                      key={item.id}
+                      index={index + 1}
+                      Company_Name_DB={item.Company_Name_DB}
+                      Company_URL_DB={item.Company_URL_DB}
+                      Platform_Name_DB={item.Platform_Name_DB}
+                      Selected_Work_DB={item.Selected_Work_DB}
+                      Show_hide_DB={item.Show_hide_DB}
+                      Up_img_url_DB={item.Up_img_url_DB}
+                      Visit_URL_DB={item.Visit_URL_DB}
+                      Website_Category_DB={item.Website_Category_DB}
+                      Website_Name_DB={item.Website_Name_DB}
+                    ></TableAllData>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </div>
-      )}
+      }
     </div>
   );
 };

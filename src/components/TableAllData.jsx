@@ -16,22 +16,22 @@ const TableAllData = (props) => {
 
   return (
           <tr className="bg-base-100">
-            <td className="">{index}</td>
-            <td className="">{Website_Name_DB}</td>
-            <td className="">{Website_Category_DB}</td>
-            <td className="">
-              <a href={Visit_URL_DB} target="/">
+            <td className="border border-[#15191e] w-[auto] break-all py-3 px-3">{index}</td>
+            <td className="border border-[#15191e] w-[auto] break-all py-3 px-3">{Website_Name_DB}</td>
+            <td className="border border-[#15191e] w-[auto] break-all py-3 px-3">{Website_Category_DB}</td>
+            <td className="border border-[#15191e] w-[auto] break-all py-3 px-3">
+              <a href={Visit_URL_DB} target="/" className="hover:text-amber-50">
                 {Website_Name_DB}
               </a>
             </td>
-            <td className="">
-              <a href={Company_URL_DB} target="/">
+            <td className="border border-[#15191e] w-[auto] break-all py-3 px-3">
+              <a href={Company_URL_DB} target="/" className="hover:text-amber-50">
                 {Company_Name_DB}
               </a>{" "}
             </td>
-            <td className="">{Platform_Name_DB}</td>
-            <td className="">{ Show_hide_DB }</td>
-            <td className="">{Selected_Work_DB}</td>
+            <td className="border border-[#15191e] w-[auto] break-all py-3 px-3">{Platform_Name_DB}</td>
+            <td className="border border-[#15191e] w-[auto] break-all py-3 px-3">{ Show_hide_DB }</td>
+            <td className="border border-[#15191e] w-[auto] break-all py-3 px-3">{Selected_Work_DB}</td>
           </tr>
         
   );

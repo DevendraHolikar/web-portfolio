@@ -8,3 +8,4 @@ React + Firebase Project
 6. Firebase delete project
 7. Tailwind css integration
 8. daisyui components integration
+9. dropdown dynamic functionality

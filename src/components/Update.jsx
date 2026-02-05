@@ -7,9 +7,12 @@ const Update = () => {
   const [allProjectData, setAllProjectData] = useState(null);
   const getdata = useReadData();
 
-  useEffect(() => {
-    setAllProjectData(getdata);
-  }, [getdata]);
+useEffect(() => {
+  if (getdata) {
+    const reversedArray = Object.values(getdata).reverse();
+    setAllProjectData(reversedArray);
+  }
+}, [getdata]);
 
   
   if (allProjectData === null) {
@@ -26,15 +29,15 @@ const Update = () => {
             <table className="table table-zebra">
               <thead>
                 <tr className="bg-base-300">
-                  <th className="">Website Name</th>
-                  <th className="">Website Category</th>
-                  <th className="">Visit URL</th>
-                  <th className="">Company Name</th>
-                  <th className="">Company URL</th>
-                  <th className="">Platform Name</th>
-                  <th className="">Show / Hide</th>
-                  <th className="">Selected Work</th>
-                  <th className="">Action</th>
+                  <th className="py-3 px-3 ">Website Name</th>
+                  <th className="py-3 px-3 ">Website Category</th> 
+                  <th className="py-3 px-3 ">Visit URL</th>
+                  <th className="py-3 px-3 ">Company Name</th>
+                  <th className="py-3 px-3 ">Company URL</th>
+                  <th className="py-3 px-3 ">Platform Name</th>
+                  <th className="py-3 px-3 ">Show / Hide</th>
+                  <th className="py-3 px-3 ">Selected Work</th>
+                  <th className="py-3 px-3 ">Action</th>
                 </tr>
               </thead>
               <tbody>

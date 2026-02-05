@@ -4,8 +4,8 @@ import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [userName, setUserName] = useState("");
-  const [userPassword, setUserPassword] = useState("");
+  const [userName, setUserName] = useState("dvholikar@gmail.com");
+  const [userPassword, setUserPassword] = useState("1234567890");
   const [userErrorMessage, setUserErrorMessage] = useState("");
   const navigate = useNavigate();
 
@@ -23,7 +23,7 @@ const Login = () => {
 
   return (
     <div className="w-full grid place-items-center mt-auto h-screen">
-      <div className="card bg-base-300 w-[90%] md:w-96 shadow-sm ">
+      <div className="card bg-base-200 w-[90%] md:w-96 shadow-sm ">
         <div className="card-body">
           <h2 className="card-title">Login</h2>
           <fieldset className="fieldset">
@@ -44,7 +44,7 @@ const Login = () => {
               onChange={(e) => setUserPassword(e.target.value)}
             />
             <p className="error">{userErrorMessage}</p>
-            <button onClick={handleSubmitClick} className="btn w-full mt-2">
+            <button onClick={handleSubmitClick} className="btn w-full btn-neutral mt-2">
               Submit
             </button>
           </fieldset>
