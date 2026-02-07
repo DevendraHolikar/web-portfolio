@@ -14,6 +14,7 @@ useEffect(() => {
   }
 }, [getdata]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   
   if (allProjectData === null) {
     return <h1 className="text-center text-bold pt-5">Loading...</h1>;
@@ -28,7 +29,7 @@ useEffect(() => {
           <div className="overflow-x-auto px-2 pb-4 mt-8">
             <table className="table table-zebra">
               <thead>
-                <tr className="bg-base-300">
+                <tr className="bg-base-200">
                   <th className="py-3 px-3 ">Website Name</th>
                   <th className="py-3 px-3 ">Website Category</th> 
                   <th className="py-3 px-3 ">Visit URL</th>

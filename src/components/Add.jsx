@@ -44,10 +44,8 @@ const Add = () => {
       Selected_Work_DB: selectedWork,
     });
 
-    console.log( websiteName,websiteCategory,visitURL,companyName,companyURL,platformName ,showHide,selectedWork)
   };
 
-    console.log(showHide,selectedWork)
 
   const handleSubmitProject = () => {
     if (!validateForm()) return;

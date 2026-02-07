@@ -4,15 +4,19 @@ import { useState, useEffect } from "react";
 
 const All = () => {
   const getData = useReadData() || [];
+  
   const [fillterData, setFillterData] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [dropDownValue, setdropDownValue] = useState("All");
-
+  
   useEffect(() => {
     if (getData.length > 0) {
       setFillterData(getData);
     }
   }, [getData]);
+  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+
 
   const handleSearch = () => {
     if (!searchValue.trim().toLowerCase()) {
@@ -107,7 +111,7 @@ const All = () => {
             <div className="overflow-x-auto px-2 capitalize pb-4">
               <table className="table table-zebra">
                 <thead>
-                  <tr className="bg-base-300">
+                  <tr className="bg-base-200">
                     <th className="w-[auto] py-3 px-3">Sr No</th>
                     <th className="w-[auto] py-3 px-3">Website Name</th>
                     <th className="w-[auto] py-3 px-3">Website Category</th>
