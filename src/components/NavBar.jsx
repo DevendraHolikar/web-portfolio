@@ -58,7 +58,7 @@ const NavBar = () => {
           </ul>
         </div>
         <Link to={"/profile"} className="btn btn-ghost text-xl">
-          Portfolio
+          Dashboard
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">

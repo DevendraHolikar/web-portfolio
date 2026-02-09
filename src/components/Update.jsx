@@ -30,14 +30,14 @@ useEffect(() => {
             <table className="table table-zebra">
               <thead>
                 <tr className="bg-base-200">
-                  <th className="py-3 px-3 ">Website Name</th>
+                  <th className="py-3 px-3 ">Website</th>
                   <th className="py-3 px-3 ">Website Category</th> 
                   <th className="py-3 px-3 ">Visit URL</th>
-                  <th className="py-3 px-3 ">Company Name</th>
+                  <th className="py-3 px-3 ">Company</th>
                   <th className="py-3 px-3 ">Company URL</th>
-                  <th className="py-3 px-3 ">Platform Name</th>
+                  <th className="py-3 px-3 ">Platform</th>
                   <th className="py-3 px-3 ">Show / Hide</th>
-                  <th className="py-3 px-3 ">Selected Work</th>
+                  <th className="py-3 px-3 ">Selected</th>
                   <th className="py-3 px-3 ">Action</th>
                 </tr>
               </thead>

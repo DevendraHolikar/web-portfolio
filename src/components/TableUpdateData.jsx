@@ -63,7 +63,7 @@ const TableUpdateData = (props) => {
         )}
       </td>
 
-      <td className="w-[140px] break-all py-3 px-3 border border-[#15191e]">
+      <td className="w-[160px] break-all py-3 px-3 border border-[#15191e]">
         {isEdit ? (
           <input
             className="input  w-full"
@@ -76,7 +76,7 @@ const TableUpdateData = (props) => {
         )}
       </td>
 
-      <td className="w-[140px] break-all py-3 px-3 border border-[#15191e]">
+      <td className="w-[240px] break-all py-3 px-3 border border-[#15191e]">
         {isEdit ? (
           <input
             className="input  w-full"
@@ -102,7 +102,7 @@ const TableUpdateData = (props) => {
         )}
       </td>
 
-      <td className="w-[140px] break-all py-3 px-3 border border-[#15191e]">
+      <td className="w-[240px] break-all py-3 px-3 border border-[#15191e]">
         {isEdit ? (
           <input
             className="input  w-full"
@@ -115,7 +115,7 @@ const TableUpdateData = (props) => {
         )}
       </td>
 
-      <td className="w-[140px] break-all py-3 px-3 border border-[#15191e]">
+      <td className="w-[70px] break-all py-3 px-3 border border-[#15191e]">
         {isEdit ? (
           <input
             className="input  w-full"
@@ -128,7 +128,7 @@ const TableUpdateData = (props) => {
         )}
       </td>
 
-      <td className="w-[140px] break-all py-3 px-3 border border-[#15191e]">
+      <td className="w-[70px] break-all py-3 px-3 border border-[#15191e]">
         {isEdit ? (
           <select
             className="select"
@@ -144,7 +144,7 @@ const TableUpdateData = (props) => {
         )}
       </td>
 
-      <td className="w-[140px] break-all py-3 px-3 border border-[#15191e]">
+      <td className="w-[70px] break-all py-3 px-3 border border-[#15191e]">
         {isEdit ? (
           <select
             className="select "
@@ -161,7 +161,7 @@ const TableUpdateData = (props) => {
       </td>
 
       <td className="w-[100px] break-all py-3 px-3 border border-[#15191e]">
-        <div className="w-2 flex flex-row gap-2 items-center">
+        <div className="w-fit md:w-2 flex flex-col md:flex-row gap-2 items-center">
           {isEdit ? (
             <button
               className="btn w-[40px] p-0 btn-soft btn-success"
