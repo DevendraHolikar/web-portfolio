@@ -43,7 +43,7 @@ const Login = () => {
               value={userPassword}
               onChange={(e) => setUserPassword(e.target.value)}
             />
-            <p className="error">{userErrorMessage}</p>
+            <p className="error text-red-500">{userErrorMessage}</p>
             <button onClick={handleSubmitClick} className="btn w-full btn-neutral mt-2">
               Submit
             </button>
